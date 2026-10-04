@@ -25,12 +25,18 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          # Do not let setup-android start an interactive license prompt.
+          accept-android-sdk-licenses: "false"
+          log-accepted-android-sdk-licenses: "false"
+          packages: ""
 
-      - name: Accept licenses
-        run: yes | sdkmanager --licenses >/dev/null || true
+      - name: Accept Android SDK licenses non-interactively
+        run: yes | sdkmanager --licenses >/dev/null
 
-      - name: Install Android 35
-        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Install required Android SDK packages
+        run: |
+          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 
       - name: Install Gradle
         uses: gradle/actions/setup-gradle@v4
