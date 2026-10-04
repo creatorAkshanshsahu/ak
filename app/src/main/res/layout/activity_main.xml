@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#080808">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="210dp"
+        android:orientation="vertical" android:padding="24dp"
+        android:background="#151515">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="52dp">
+            <TextView android:id="@+id/logo" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="AK TV" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="30sp"/>
+            <EditText android:id="@+id/search" android:layout_width="0dp" android:layout_height="52dp"
+                android:layout_weight="1" android:layout_marginStart="28dp" android:hint="Search movies"
+                android:singleLine="true" android:textColor="#FFFFFF" android:textColorHint="#777777"
+                android:background="#252525" android:paddingStart="16dp"/>
+            <Button android:id="@+id/searchButton" android:layout_width="110dp" android:layout_height="52dp"
+                android:layout_marginStart="10dp" android:text="SEARCH"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="50dp"
+            android:layout_marginTop="10dp">
+            <Button android:id="@+id/moviesTab" android:layout_width="160dp" android:layout_height="48dp"
+                android:text="🎬 MOVIES"/>
+            <Button android:id="@+id/liveTab" android:layout_width="160dp" android:layout_height="48dp"
+                android:layout_marginStart="10dp" android:text="📺 LIVE TV"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/heroTitle" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:text="AK TV" android:textColor="#FFFFFF"
+            android:textStyle="bold" android:textSize="26sp"/>
+        <TextView android:id="@+id/heroDescription" android:layout_width="700dp" android:layout_height="wrap_content"
+            android:textColor="#BBBBBB" android:textSize="14sp"
+            android:maxLines="1" android:ellipsize="end"/>
+    </LinearLayout>
+
+    <TextView android:id="@+id/status" android:layout_width="match_parent" android:layout_height="42dp"
+        android:gravity="center_vertical" android:paddingStart="28dp" android:textColor="#999999" android:textSize="13sp"/>
+
+    <TextView android:id="@+id/moviesHeading" android:layout_width="match_parent" android:layout_height="35dp"
+        android:paddingStart="28dp" android:text="Free &amp; Licensed Movies" android:textColor="#FFFFFF"
+        android:textStyle="bold" android:textSize="18sp"/>
+
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/grid"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:clipToPadding="false" android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingBottom="24dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/channelGrid"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:visibility="gone" android:clipToPadding="false"
+        android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingBottom="24dp"/>
+</LinearLayout>
